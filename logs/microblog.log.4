@@ -1,4 +1,5 @@
-2023-04-10 22:00:44,430 ERROR: Exception on /user/ersin [GET] [in C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py:1744]
+2023-04-12 15:04:27,430 INFO: Microblog startup [in C:\Users\ErsinN\PycharmProjects\micro_blog\app\__init__.py:52]
+2023-04-12 15:04:33,311 ERROR: Exception on /edit_profile [GET] [in C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py:1744]
 Traceback (most recent call last):
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py", line 2528, in wsgi_app
     response = self.full_dispatch_request()
@@ -15,9 +16,9 @@ Traceback (most recent call last):
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\routes.py", line 97, in user
-    return render_template('user.html', user=user_, posts=posts, form=form)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\routes.py", line 114, in edit_profile
+    return render_template('edit_profile.html', title="Edit Profile", form=form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 147, in render_template
     return _render(app, template, context)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -28,16 +29,21 @@ Traceback (most recent call last):
     self.environment.handle_exception()
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\user.html", line 1, in top-level template code
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\edit_profile.html", line 1, in top-level template code
     {% extends "layout.html" %}
     ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\layout.html", line 32, in top-level template code
-    {% block content %} {% endblock content %}
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\layout.html", line 33, in top-level template code
+    {% endfor %}
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\edit_profile.html", line 7, in block 'content'
+    {% from 'bootstrap5/form.html' import render_form %}
     ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\user.html", line 19, in block 'content'
-    {{ form.hidden_tag() }}
-TypeError: FlaskForm.hidden_tag() missing 1 required positional argument: 'self'
-2023-04-10 22:15:47,087 ERROR: Exception on /user/ersin [GET] [in C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py:1744]
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 62, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: bootstrap5/form.html
+2023-04-12 15:05:01,322 ERROR: Exception on /edit_profile [GET] [in C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py:1744]
 Traceback (most recent call last):
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py", line 2528, in wsgi_app
     response = self.full_dispatch_request()
@@ -54,9 +60,9 @@ Traceback (most recent call last):
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\routes.py", line 97, in user
-    return render_template('user.html', user=user_, posts=posts, form=form)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\routes.py", line 114, in edit_profile
+    return render_template('edit_profile.html', title="Edit Profile", form=form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 147, in render_template
     return _render(app, template, context)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -67,17 +73,21 @@ Traceback (most recent call last):
     self.environment.handle_exception()
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\user.html", line 1, in top-level template code
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\edit_profile.html", line 1, in top-level template code
     {% extends "layout.html" %}
     ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\layout.html", line 32, in top-level template code
-    {% block content %} {% endblock content %}
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\layout.html", line 33, in top-level template code
+    {% endfor %}
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\edit_profile.html", line 7, in block 'content'
+    {% from 'bootstrap5/form.html' import render_form %}
     ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\user.html", line 19, in block 'content'
-    <!--                        {{ form.hidden_tag() }}-->
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: FlaskForm.hidden_tag() missing 1 required positional argument: 'self'
-2023-04-10 22:19:50,105 ERROR: Exception on /user/ersin [GET] [in C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py:1744]
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 62, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: bootstrap5/form.html
+2023-04-12 15:06:52,359 ERROR: Exception on /edit_profile [GET] [in C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py:1744]
 Traceback (most recent call last):
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py", line 2528, in wsgi_app
     response = self.full_dispatch_request()
@@ -94,7 +104,9 @@ Traceback (most recent call last):
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\routes.py", line 97, in user
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\routes.py", line 114, in edit_profile
+    return render_template('edit_profile.html', title="Edit Profile", form=form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 147, in render_template
     return _render(app, template, context)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -105,18 +117,16 @@ Traceback (most recent call last):
     self.environment.handle_exception()
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\user.html", line 1, in top-level template code
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\edit_profile.html", line 1, in top-level template code
     {% extends "layout.html" %}
     ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\layout.html", line 32, in top-level template code
-    {% block content %} {% endblock content %}
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\user.html", line 19, in block 'content'
-    <!--                        {{ form.hidden_tag() }}-->
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: FlaskForm.hidden_tag() missing 1 required positional argument: 'self'
-2023-04-10 22:20:09,501 INFO: Microblog startup [in C:\Users\ErsinN\PycharmProjects\micro_blog\app\__init__.py:46]
-2023-04-11 09:57:37,636 INFO: Microblog startup [in C:\Users\ErsinN\PycharmProjects\micro_blog\app\__init__.py:46]
-2023-04-11 09:59:47,229 INFO: Microblog startup [in C:\Users\ErsinN\PycharmProjects\micro_blog\app\__init__.py:46]
-2023-04-11 10:00:18,396 INFO: Microblog startup [in C:\Users\ErsinN\PycharmProjects\micro_blog\app\__init__.py:46]
-2023-04-11 10:09:37,327 INFO: Microblog startup [in C:\Users\ErsinN\PycharmProjects\micro_blog\app\__init__.py:46]
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\layout.html", line 33, in top-level template code
+    {% endfor %}
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\edit_profile.html", line 7, in block 'content'
+    <p>
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 62, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: bootstrap5/form.html

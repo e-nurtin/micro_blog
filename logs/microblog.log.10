@@ -1,4 +1,4 @@
-2023-04-10 21:57:01,136 ERROR: Exception on /user/ersin [GET] [in C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py:1744]
+2023-04-11 10:22:35,228 ERROR: Exception on /explore [GET] [in C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py:1744]
 Traceback (most recent call last):
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py", line 2528, in wsgi_app
     response = self.full_dispatch_request()
@@ -15,9 +15,9 @@ Traceback (most recent call last):
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\routes.py", line 97, in user
-    return render_template('user.html', user=user_, posts=posts, form=form)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\routes.py", line 177, in explore
+    return render_template(url_for('index'), title='Explore', posts=posts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 146, in render_template
     template = app.jinja_env.get_or_select_template(template_name_or_list)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -30,18 +30,16 @@ Traceback (most recent call last):
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 969, in _load_template
     template = self.loader.load(self, name, self.make_globals(globals))
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\loaders.py", line 138, in load
-    code = environment.compile(source, name, filename)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 768, in compile
-    self.handle_exception(source=source_hint)
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\user.html", line 14, in template
-    {% elif not current_user.is_following(user) %}
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'elif'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
-2023-04-10 21:59:15,941 ERROR: Exception on /user/ersin [GET] [in C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py:1744]
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 62, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /home
+2023-04-11 10:22:37,532 ERROR: Exception on /explore [GET] [in C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py:1744]
 Traceback (most recent call last):
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py", line 2528, in wsgi_app
     response = self.full_dispatch_request()
@@ -58,9 +56,9 @@ Traceback (most recent call last):
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\routes.py", line 97, in user
-    return render_template('user.html', user=user_, posts=posts, form=form)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\routes.py", line 177, in explore
+    return render_template(url_for('index'), title='Explore', posts=posts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 146, in render_template
     template = app.jinja_env.get_or_select_template(template_name_or_list)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -73,14 +71,56 @@ Traceback (most recent call last):
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 969, in _load_template
     template = self.loader.load(self, name, self.make_globals(globals))
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\loaders.py", line 138, in load
-    code = environment.compile(source, name, filename)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 768, in compile
-    self.handle_exception(source=source_hint)
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\user.html", line 20, in template
-    {{ form.submit(value='Follow' }}
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-jinja2.exceptions.TemplateSyntaxError: unexpected '}', expected ')'
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 62, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /home
+2023-04-11 10:22:39,299 ERROR: Exception on /explore [GET] [in C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py:1744]
+Traceback (most recent call last):
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\routes.py", line 177, in explore
+    return render_template(url_for('index'), title='Explore', posts=posts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 146, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 62, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /home
+2023-04-11 16:10:23,679 INFO: Microblog startup [in C:\Users\ErsinN\PycharmProjects\micro_blog\app\__init__.py:48]
+2023-04-11 16:13:44,274 INFO: Microblog startup [in C:\Users\ErsinN\PycharmProjects\micro_blog\app\__init__.py:48]
+2023-04-11 16:27:56,081 INFO: Microblog startup [in C:\Users\ErsinN\PycharmProjects\micro_blog\app\__init__.py:48]

@@ -91,8 +91,8 @@ def user(username):
 	page = request.args.get('page', 1, type=int)
 	posts = user_.posts.order_by(Post.timestamp.desc()).paginate(
 		page=page, per_page=app.config['POSTS_PER_PAGE'], error_out=False)
-	next_url = url_for('user', username=user_.username, page=posts.next_num) if posts.has_next else None
-	prev_url = url_for('user', username=user_.username, page=posts.prev_num) if posts.has_prev else None
+	next_url = url_for('user', username=user_.username, page=posts.next_num) if posts.has_next else '#'
+	prev_url = url_for('user', username=user_.username, page=posts.prev_num) if posts.has_prev else '#'
 	return render_template('user.html', user=user_, posts=posts.items, form=form, next_url=next_url, prev_url=prev_url)
 
 

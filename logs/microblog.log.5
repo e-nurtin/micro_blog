@@ -1,4 +1,4 @@
-2023-04-11 10:22:35,228 ERROR: Exception on /explore [GET] [in C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py:1744]
+2023-04-12 15:01:48,119 ERROR: Exception on /edit_profile [GET] [in C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py:1744]
 Traceback (most recent call last):
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py", line 2528, in wsgi_app
     response = self.full_dispatch_request()
@@ -15,31 +15,34 @@ Traceback (most recent call last):
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\routes.py", line 177, in explore
-    return render_template(url_for('index'), title='Explore', posts=posts)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 146, in render_template
-    template = app.jinja_env.get_or_select_template(template_name_or_list)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 1081, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 1010, in get_template
-    return self._load_template(name, globals)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 969, in _load_template
-    template = self.loader.load(self, name, self.make_globals(globals))
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
-    source, filename, uptodate = self.get_source(environment, name)
-                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\routes.py", line 114, in edit_profile
+    return render_template('edit_profile.html', title="Edit Profile", form=form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 130, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\edit_profile.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\layout.html", line 33, in top-level template code
+    {% endfor %}
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\edit_profile.html", line 7, in block 'content'
+    {% from 'bootstrap5/form.html' import render_form %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 62, in get_source
     return self._get_source_fast(environment, template)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
     raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: /home
-2023-04-11 10:22:37,532 ERROR: Exception on /explore [GET] [in C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py:1744]
+jinja2.exceptions.TemplateNotFound: bootstrap5/form.html
+2023-04-12 15:02:09,155 ERROR: Exception on /edit_profile [GET] [in C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py:1744]
 Traceback (most recent call last):
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py", line 2528, in wsgi_app
     response = self.full_dispatch_request()
@@ -56,31 +59,35 @@ Traceback (most recent call last):
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\routes.py", line 177, in explore
-    return render_template(url_for('index'), title='Explore', posts=posts)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 146, in render_template
-    template = app.jinja_env.get_or_select_template(template_name_or_list)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 1081, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 1010, in get_template
-    return self._load_template(name, globals)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 969, in _load_template
-    template = self.loader.load(self, name, self.make_globals(globals))
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
-    source, filename, uptodate = self.get_source(environment, name)
-                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\routes.py", line 114, in edit_profile
+    return render_template('edit_profile.html', title="Edit Profile", form=form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 130, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\edit_profile.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\layout.html", line 33, in top-level template code
+    {% endfor %}
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\edit_profile.html", line 7, in block 'content'
+    {% from 'bootstrap5/form.html' import render_form %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 62, in get_source
     return self._get_source_fast(environment, template)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
     raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: /home
-2023-04-11 10:22:39,299 ERROR: Exception on /explore [GET] [in C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py:1744]
+jinja2.exceptions.TemplateNotFound: bootstrap5/form.html
+2023-04-12 15:02:18,227 INFO: Microblog startup [in C:\Users\ErsinN\PycharmProjects\micro_blog\app\__init__.py:52]
+2023-04-12 15:02:20,974 ERROR: Exception on /edit_profile [GET] [in C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py:1744]
 Traceback (most recent call last):
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py", line 2528, in wsgi_app
     response = self.full_dispatch_request()
@@ -97,30 +104,32 @@ Traceback (most recent call last):
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\routes.py", line 177, in explore
-    return render_template(url_for('index'), title='Explore', posts=posts)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 146, in render_template
-    template = app.jinja_env.get_or_select_template(template_name_or_list)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 1081, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 1010, in get_template
-    return self._load_template(name, globals)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 969, in _load_template
-    template = self.loader.load(self, name, self.make_globals(globals))
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
-    source, filename, uptodate = self.get_source(environment, name)
-                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\routes.py", line 114, in edit_profile
+    return render_template('edit_profile.html', title="Edit Profile", form=form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 130, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\edit_profile.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\layout.html", line 33, in top-level template code
+    {% endfor %}
+  File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\edit_profile.html", line 7, in block 'content'
+    {% from 'bootstrap5/form.html' import render_form %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 62, in get_source
     return self._get_source_fast(environment, template)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
     raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: /home
-2023-04-11 16:10:23,679 INFO: Microblog startup [in C:\Users\ErsinN\PycharmProjects\micro_blog\app\__init__.py:48]
-2023-04-11 16:13:44,274 INFO: Microblog startup [in C:\Users\ErsinN\PycharmProjects\micro_blog\app\__init__.py:48]
-2023-04-11 16:27:56,081 INFO: Microblog startup [in C:\Users\ErsinN\PycharmProjects\micro_blog\app\__init__.py:48]
+jinja2.exceptions.TemplateNotFound: bootstrap5/form.html
+2023-04-12 15:03:22,905 INFO: Microblog startup [in C:\Users\ErsinN\PycharmProjects\micro_blog\app\__init__.py:52]
+2023-04-12 15:03:39,750 INFO: Microblog startup [in C:\Users\ErsinN\PycharmProjects\micro_blog\app\__init__.py:52]

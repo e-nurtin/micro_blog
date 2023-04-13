@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <table>
-        <tr style="alignment: top">
+<div class="container">
+    <table class="table table-borderless">
+        <tr class="row">
             <td>
                 <img src="{{ user.avatar(128) }}" alt="user image"/>
             </td>
@@ -17,21 +18,21 @@
                 <p>
                     <form action="{{ url_for('follow', username=user.username) }}" method="post">
                         {{ form.hidden_tag() }}
-                        {{ form.submit(value='Follow') }}
+                        {{ form.submit(class_='btn btn-secondary', value='Follow') }}
                     </form>
                 </p>
                 {% else %}
                 <p>
                     <form action="{{ url_for('unfollow', username=user.username) }}" method="post">
                         {{ form.hidden_tag() }}
-                        {{ form.submit(value='Unfollow') }}
+                        {{ form.submit(class_='btn btn-secondary', value='Unfollow') }}
                     </form>
                 {% endif %}
                 </p>
             </td>
         </tr>
     </table>
-    <hr>
+</div>
     {% for post in posts %}
         {% include '_post.html' %}
     {% endfor %}

@@ -1,25 +1,28 @@
 {% extends "layout.html" %}
+<!--{% from 'bootstrap5/form.html' import render_form %}-->
 
 {% block content %}
-  <h1>Edit Profile</h1>
+<div class="container">
+  <h1 class="mb-3 m-2">Edit Profile</h1>
   <form action="" method="post">
     {{ form.hidden_tag() }}
-    <p>
-      {{ form.username.label }}<br>
-      {{ form.username(size=32) }}<br>
+    <div class="col-sm-3 mb-3">
+      <label class="form-label">{{ form.username.label }}</label>
+      {{ form.username(class_="form-control", placeholder="Username", size=32) }}
       {% for error in form.username.errors %}
-      <span style="color:red;">{{ error }}</span>
+      <label class="form-control is-invalid">{{ error }}</label>
       {% endfor %}
-    </p>
-    <p>
-      {{ form.about_me.label }}<br>
-      {{ form.about_me(cols=50, rows=4) }}<br>
+    </div>
+    <div class="col-sm-3 mb-3">
+      <label class="form-label">{{ form.about_me.label }}</label>
+      {{ form.about_me(style="height: 120px", class_="form-control", placeholder="Leave a comment here") }}
+
       {% for error in form.about_me.errors %}
-      <span style="color:red;">{{ error }}</span>
+      <label class="form-control is-invalid">{{ error }}</label>
       {% endfor %}
-    </p>
-    <p>
-      {{ form.submit }}
-    </p>
+    </div>
+    {{ form.submit(class_="btn btn-primary m-3 mb-3") }}
+<!--    <button type="submit" class="btn btn-primary m-3 mb-3">Submit</button>-->
   </form>
+</div>
 {% endblock content %}

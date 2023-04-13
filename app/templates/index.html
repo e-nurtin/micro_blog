@@ -1,41 +1,43 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <h1>Hi, {{ current_user.username }}!</h1>
+  <div class="container">
+    <h1 class="mb-3 m-3">Hello, {{ current_user.username }}!</h1>
     {% if form %}
     <form action="" method="post">
-        {{ form.hidden_tag() }}
-        <p>
-            {{ form.post.label }}<br>
-            {{ form.post(cols=32, rows=4) }}<br>
-            {% for error in form.post.errors %}
-            <span style="color:red;">{{ error }}</span>
-            {% endfor %}
-        </p>
-        <p>{{ form.submit() }}</p>
+      {{ form.hidden_tag() }}
+      <div class="form-floating row-cols-sm-3 mb-3">
+        {{ form.post(style="height: 120px", class_="form-control", placeholder="Leave a comment here") }}
+        <label>{{ form.post.label }}</label>
+        {% for error in form.post.errors %}
+        <label class="form-control is-invalid">{{ error }}</label>
+        {% endfor %}
+      </div>
+      <button type="submit" class="btn btn-primary m-3 mb-3">Submit</button>
+      <hr>
     </form>
     {% endif %}
+  </div>
     {% for post in posts %}
         {% include '_post.html' %}
-<!--    <article class="media content-section">-->
-<!--      <div class="media-body">-->
-<!--        <div class="article-metadata">-->
-<!--          <p><a class="mr-2" href="{{ url_for('user', username=post.author.username) }}">{{ post.author.username }}</a> said:</p>-->
-<!--        </div>-->
-<!--&lt;!&ndash;        <h2><a class="article-title" href="#">{{ post.title }}</a></h2>&ndash;&gt;-->
-<!--        <p class="article-content">{{ post.body }}</p>-->
-<!--        <small class="text-muted">{{ post.timestamp }}</small>-->
-<!--        <hr>-->
-<!--      </div>-->
-<!--    </article>-->
     {% endfor %}
-    {% if page %}
-    <p>Current page: {{ page }}</p>
-    {% endif %}
-    {% if prev_url %}
-    <a href="{{ prev_url }}">Newer posts</a>
-    {% endif %}
-    {% if next_url %}
-    <a href="{{ next_url }}">Older posts</a>
-    {% endif %}
+  <div class="container">
+    <nav>
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link{% if prev_url %} disabled{% endif %}" href="{{ prev_url or '#' }}" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+<!--        <li class="page-item"><a class="page-link" href="#">1</a></li>-->
+<!--        <li class="page-item"><a class="page-link" href="#">2</a></li>-->
+<!--        <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+<!--        <li class="page-item">-->
+          <a class="page-link" href="{{ next_url or '#' }}" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 {% endblock content %}
