@@ -1,21 +1,20 @@
 {% extends "layout.html" %}
-<!--{% from 'bootstrap5/form.html' import render_form %}-->
 
 {% block content %}
 <div class="container">
-  <h1 class="mb-3 m-2">Edit Profile</h1>
+  <h1 class="mb-3 m-2">{{ _('Edit Profile') }}</h1>
   <form action="" method="post">
     {{ form.hidden_tag() }}
     <div class="col-sm-3 mb-3">
       <label class="form-label">{{ form.username.label }}</label>
-      {{ form.username(class_="form-control", placeholder="Username", size=32) }}
+      {{ form.username(class_="form-control", placeholder=form.username.label.text, size=32) }}
       {% for error in form.username.errors %}
       <label class="form-control is-invalid">{{ error }}</label>
       {% endfor %}
     </div>
     <div class="col-sm-3 mb-3">
       <label class="form-label">{{ form.about_me.label }}</label>
-      {{ form.about_me(style="height: 120px", class_="form-control", placeholder="Leave a comment here") }}
+      {{ form.about_me(style="height: 120px", class_="form-control", placeholder=form.about_me.label.text) }}
 
       {% for error in form.about_me.errors %}
       <label class="form-control is-invalid">{{ error }}</label>

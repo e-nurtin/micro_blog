@@ -2,18 +2,21 @@
 
 {% block content %}
   <div class="container">
-    <h1 class="mb-3 m-3">Hello, {{ current_user.username }}!</h1>
+    <h1 class="mb-3 m-3">{{ _('Hello, %(username)s!', username=current_user.username) }}</h1>
+
+{#    <h1 class="mb-3 m-3">{{ _('Hello') }}, {{ current_user.username }}!</h1>#}
     {% if form %}
     <form action="" method="post">
       {{ form.hidden_tag() }}
       <div class="form-floating row-cols-sm-3 mb-3">
-        {{ form.post(style="height: 120px", class_="form-control", placeholder="Leave a comment here") }}
-        <label>{{ form.post.label }}</label>
+        {{ form.post(style="height: 120px", class_="form-control", placeholder=form.post.label.text) }}
+        <label>{{ form.post.label.text }}</label>
         {% for error in form.post.errors %}
         <label class="form-control is-invalid">{{ error }}</label>
         {% endfor %}
       </div>
-      <button type="submit" class="btn btn-primary m-3 mb-3">Submit</button>
+      {{ form.submit(class_="btn btn-primary m-3 mb-3") }}
+{#      <button type="submit" class="btn btn-primary m-3 mb-3">Submit</button>#}
       <hr>
     </form>
     {% endif %}
@@ -32,7 +35,7 @@
 <!--        <li class="page-item"><a class="page-link" href="#">1</a></li>-->
 <!--        <li class="page-item"><a class="page-link" href="#">2</a></li>-->
 <!--        <li class="page-item"><a class="page-link" href="#">3</a></li>-->
-<!--        <li class="page-item">-->
+        <li class="page-item">
           <a class="page-link" href="{{ next_url or '#' }}" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
           </a>

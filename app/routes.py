@@ -1,12 +1,13 @@
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
 from app import app, db
-from flask import render_template, flash, redirect, url_for, request
+from flask import render_template, flash, redirect, url_for, request, g
 from datetime import datetime
 from app.forms import LoginForm, RegistrationForm, EditProfileForm, EmptyForm, PostForm, ResetPasswordForm, \
 	ResetPasswordRequestForm
 from app.models import User, Post
 from app.email import send_password_reset_email
+from flask_babel import _, get_locale
 
 
 @app.before_request
@@ -25,7 +26,7 @@ def index():
 		post = Post(body=form.post.data, author=current_user)
 		db.session.add(post)
 		db.session.commit()
-		flash("Post is shared successfully!")
+		flash(_("Post is shared successfully!"))
 		return redirect(url_for('index'))
 	page = request.args.get('page', 1, type=int)
 	posts = current_user.followed_posts().paginate(
@@ -46,7 +47,7 @@ def login():
 		user = User.query.filter_by(username=form.username.data).first()
 		
 		if user is None or not user.check_password(form.password.data):
-			flash('Invalid username or password')
+			flash(_('Invalid username or password'))
 			return redirect(url_for('login'))
 		
 		login_user(user, remember=form.remember_me.data)
@@ -77,7 +78,7 @@ def register():
 		user.set_password(form.password.data)
 		db.session.add(user)
 		db.session.commit()
-		flash('Congratulations, you are now registered user!')
+		flash(_('Congratulations, you are now registered user!'))
 		return redirect(url_for('login'))
 	
 	return render_template('register.html', title='Register', form=form)
@@ -105,7 +106,7 @@ def edit_profile():
 		current_user.username = form.username.data
 		current_user.about_me = form.about_me.data
 		db.session.commit()
-		flash('Your changes have been saved!')
+		flash(_('Your changes have been saved!'))
 		return redirect(url_for('edit_profile'))
 	elif request.method == 'GET':
 		form.username.data = current_user.username
@@ -123,16 +124,16 @@ def follow(username):
 		user = User.query.filter_by(username=username).first()
 		
 		if user is None:
-			flash(f"User {username} is not found!")
+			flash(_(f"User {username} is not found!"))
 			return redirect(url_for('index'))
 		
 		if user == current_user:
-			flash("You cannot follow yourself!")
+			flash(_("You cannot follow yourself!"))
 			return redirect(url_for('user', username=username))
 		
 		current_user.follow(user)
 		db.session.commit()
-		flash(f'You are now following {username}!')
+		flash(_(f'You are now following {username}!'))
 		return redirect(url_for('user', username=username))
 	else:
 		return redirect(url_for('index'))
@@ -147,16 +148,16 @@ def unfollow(username):
 		user = User.query.filter_by(username=username).first()
 		
 		if user is None:
-			flash(f"User {username} is not found!")
+			flash(_(f"User {username} is not found!"))
 			return redirect(url_for('index'))
 		
 		if user == current_user:
-			flash("You cannot unfollow yourself!")
+			flash(_("You cannot unfollow yourself!"))
 			return redirect(url_for('user', username=username))
 		
 		current_user.unfollow(user)
 		db.session.commit()
-		flash(f'You are not following {username} anymore!')
+		flash(_(f'You are not following {username} anymore!'))
 		return redirect(url_for('user', username=username))
 	else:
 		return redirect(url_for('index'))
@@ -186,7 +187,7 @@ def reset_password_request():
 		
 		if user:
 			send_password_reset_email(user)
-		flash('Check your email for instructions on how to reset your password')
+		flash(_('Check your email for instructions on how to reset your password'))
 		return redirect(url_for('login'))
 	return render_template('reset_password_request.html', title='Reset Password', form=form)
 
@@ -203,6 +204,11 @@ def reset_password(token):
 	if form.validate_on_submit():
 		user.set_password(form.password.data)
 		db.session.commit()
-		flash("Your password has been changed!")
+		flash(_("Your password has been changed!"))
 		return redirect(url_for('login'))
 	return render_template('reset_password.html', form=form)
+
+
+@app.before_request
+def before_request():
+	g.locale = str(get_locale())

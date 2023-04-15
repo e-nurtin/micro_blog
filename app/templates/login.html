@@ -1,19 +1,18 @@
 {% extends "layout.html" %}
-<!--{% from 'bootstrap5/form.html' import render_form %}-->
 
 {% block content %}
 <div class="container centered">
-  <h1 class="mb-3 m-2">Sign In</h1>
+  <h1 class="mb-3 m-2">{{ _('Sign In') }}</h1>
   <form action="" method="post" novalidate>
     {{ form.hidden_tag() }}
     <div class="col-sm-3 mb-3">
-      {{ form.username(class_="form-control", placeholder="Username", size=32) }}
+      {{ form.username(class_="form-control", placeholder=form.username.label.text, size=32) }}
       {% for error in form.password.errors %}
       <label class="form-control is-invalid">{{ error }}</label>
       {% endfor %}
     </div>
     <div class="mb-3 col-sm-3">
-      {{ form.password(class_="form-control", placeholder="Password") }}
+      {{ form.password(class_="form-control", placeholder=form.password.label.text, size=32) }}
       {% for error in form.password.errors %}
       <label class="form-control is-invalid">{{ error }}</label>
       {% endfor %}
@@ -23,9 +22,9 @@
       {{ form.remember_me(type="checkbox", class_="form-check-input") }}
       {{ form.remember_me.label(class_="form-check-label") }}
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    {{ form.submit(class_='btn btn-primary') }}
   </form>
-  <p class="m-2">New user? <a style="text-decoration: none" href="{{ url_for('register') }}">Click to register!</a></p>
-  <p class="m-2">Forgot password? <a style="text-decoration: none" href="{{ url_for('reset_password_request') }}">Click to reset.</a></p>
+  <p class="m-2">{{ _('New user?') }} <a style="text-decoration: none" href="{{ url_for('register') }}">{{ _('Click to register!') }}</a></p>
+  <p class="m-2">{{ _('Forgot password?') }} <a style="text-decoration: none" href="{{ url_for('reset_password_request') }}">{{ _('Click to reset') }}.</a></p>
 </div>
 {% endblock %}

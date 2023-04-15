@@ -2,29 +2,29 @@
 
 {% block content %}
 <div class="container">
-  <h1 class="mb-3 m-2">Register</h1>
+  <h1 class="mb-3 m-2">{{ _('Register') }}</h1>
   <form method="post" action="">
     {{ form.hidden_tag() }}
     <div class="col-sm-3 mb-3">
-      {{ form.username(class_="form-control", placeholder="Username", size=32) }}
+      {{ form.username(class_="form-control", placeholder=form.username.label.text, size=32) }}
       {% for error in form.username.errors %}
       <label class="form-control is-invalid">{{ error }}</label>
       {% endfor %}
     </div>
     <div class="col-sm-3 mb-3">
-      {{ form.email(class_="form-control", placeholder="Email", size=32) }}
+      {{ form.email(class_="form-control", placeholder=form.email.label.text, size=32) }}
       {% for error in form.email.errors %}
       <label class="form-control is-invalid">{{ error }}</label>
       {% endfor %}
     </div>
     <div class="mb-3 col-sm-3">
-      {{ form.password(class_="form-control", placeholder="Password") }}
+      {{ form.password(class_="form-control", placeholder=form.password.label.text) }}
       {% for error in form.password.errors %}
       <label class="form-control is-invalid">{{ error }}</label>
       {% endfor %}
     </div>
     <div class="mb-3 col-sm-3">
-      {{ form.repeat_password(class_="form-control", placeholder="Repeat Password") }}
+      {{ form.repeat_password(class_="form-control", placeholder=form.repeat_password.label.text) }}
       {% for error in form.repeat_password.errors %}
       <label class="form-control is-invalid">{{ error }}</label>
       {% endfor %}

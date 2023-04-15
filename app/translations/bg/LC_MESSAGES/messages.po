@@ -1,0 +1,207 @@
+# Bulgarian translations for PROJECT.
+# Copyright (C) 2023 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-04-15 16:00+0300\n"
+"PO-Revision-Date: 2023-04-15 11:03+0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: bg\n"
+"Language-Team: bg <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: app/email.py:23
+msgid "[Microblog] Reset Password"
+msgstr "[Microblog] Промяна на парола"
+
+#: app/forms.py:9 app/forms.py:16 app/forms.py:34
+msgid "Username"
+msgstr "Потребителско име"
+
+#: app/forms.py:10 app/forms.py:18 app/forms.py:66
+msgid "Password"
+msgstr "Парола"
+
+#: app/forms.py:11
+msgid "Remember Me"
+msgstr "Запомни ме"
+
+#: app/forms.py:17 app/forms.py:61
+msgid "Email"
+msgstr "Имейл"
+
+#: app/forms.py:19 app/forms.py:67
+msgid "Repeat Password"
+msgstr "Повтори паролата"
+
+#: app/forms.py:20 app/templates/register.html:5
+msgid "Register"
+msgstr "Регистрация"
+
+#: app/forms.py:25
+msgid "Username already in use! Please choose another."
+msgstr "Потребителското име е заето! Моля изберете друг."
+
+#: app/forms.py:30
+msgid "Email address already in use! Please choose another."
+msgstr "Имейла е вече използван! Моля изберете друг."
+
+#: app/forms.py:35
+msgid "About Me"
+msgstr "За мен"
+
+#: app/forms.py:36 app/forms.py:51 app/forms.py:57
+msgid "Submit"
+msgstr "Потвърди"
+
+#: app/forms.py:47
+msgid "The username already in use! Please choose a different username."
+msgstr "Потребителското име е заето! Моля изберете друг."
+
+#: app/forms.py:55
+msgid "Say what's on your mind"
+msgstr "Споделете мислите си"
+
+#: app/forms.py:62 app/forms.py:68 app/templates/reset_password_request.html:5
+msgid "Reset Password"
+msgstr "Промени паролата си"
+
+#: app/routes.py:29
+msgid "Post is shared successfully!"
+msgstr "Публикацията е споделена успешно!"
+
+#: app/routes.py:50
+msgid "Invalid username or password"
+msgstr "Невалидни данни"
+
+#: app/routes.py:81
+msgid "Congratulations, you are now registered user!"
+msgstr "Поздравления, вече сте регистриран потребител!"
+
+#: app/routes.py:109
+msgid "Your changes have been saved!"
+msgstr "Вашите промени са запазени!"
+
+#: app/routes.py:131
+msgid "You cannot follow yourself!"
+msgstr "Не можете да следвате себе си!"
+
+#: app/routes.py:155
+msgid "You cannot unfollow yourself!"
+msgstr "Не можете да следвате себе си!"
+
+#: app/routes.py:190
+msgid "Check your email for instructions on how to reset your password"
+msgstr "Моля, проверете имейла си за инструкции как да промените паролата си"
+
+#: app/routes.py:207
+msgid "Your password has been changed!"
+msgstr "Вашата парола беше променена"
+
+#: app/templates/404.html:5
+msgid "File Not Found"
+msgstr "Файлът не е намерен"
+
+#: app/templates/404.html:6
+msgid "Back to Home"
+msgstr "Върни се към началото"
+
+#: app/templates/500.html:5
+msgid "An unexpected error has occurred"
+msgstr "Появи се неочаквана грешка"
+
+#: app/templates/500.html:6
+msgid ""
+"The error message was sent to the server. We apologize for any "
+"inconvenience!"
+msgstr ""
+"Съобщението за грешка беше изпратено до сървъра. Извиняваме се за "
+"неудобството!"
+
+#: app/templates/500.html:7
+msgid "Back to Home Page"
+msgstr "Върни се към началото"
+
+#: app/templates/_post.html:9
+#, python-format
+msgid "%(username)s said %(when)s"
+msgstr "%(username)s каза %(when)s"
+
+#: app/templates/edit_profile.html:5 app/templates/layout.html:42
+#: app/templates/user.html:16
+msgid "Edit Profile"
+msgstr "Редактирай профила си"
+
+#: app/templates/index.html:5
+#, python-format
+msgid "Hello, %(username)s!"
+msgstr "Здравей, %(username)s!"
+
+#: app/templates/layout.html:24
+msgid "Home"
+msgstr "Начало"
+
+#: app/templates/layout.html:28 app/templates/layout.html:35
+msgid "Explore"
+msgstr "Разгледайте"
+
+#: app/templates/layout.html:31
+msgid "Login"
+msgstr "Впиши се"
+
+#: app/templates/layout.html:39
+msgid "Profile"
+msgstr "Вашият профил"
+
+#: app/templates/layout.html:43
+msgid "User Profile"
+msgstr "Профил"
+
+#: app/templates/layout.html:45
+msgid "Logout"
+msgstr "Изход"
+
+#: app/templates/login.html:5
+msgid "Sign In"
+msgstr "Впиши се"
+
+#: app/templates/login.html:27
+msgid "New user?"
+msgstr "Нов потребител?"
+
+#: app/templates/login.html:27
+msgid "Click to register!"
+msgstr "Регистрирай се!"
+
+#: app/templates/login.html:28
+msgid "Forgot password?"
+msgstr "Забравена парола?"
+
+#: app/templates/login.html:28
+msgid "Click to reset"
+msgstr "Нулирай паролата си"
+
+#: app/templates/user.html:11
+msgid "User"
+msgstr "Потребител"
+
+#: app/templates/user.html:13
+msgid "Last seen on"
+msgstr "Последно видян на"
+
+#: app/templates/user.html:14
+msgid "followers"
+msgstr "вашите последователи"
+
+#: app/templates/user.html:14
+msgid "following"
+msgstr "последявания"
+

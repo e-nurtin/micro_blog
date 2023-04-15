@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, g, request
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -8,7 +8,8 @@ from logging.handlers import SMTPHandler
 from logging.handlers import RotatingFileHandler
 from flask_mail import Mail
 import os
-from flask_bootstrap import Bootstrap5
+from flask_moment import Moment
+from flask_babel import Babel, lazy_gettext
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -16,8 +17,9 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view = 'login'
+login.login_message = lazy_gettext('Please log in to access this page')
 mail = Mail(app)
-bootstrap = Bootstrap5(app)
+moment = Moment(app)
 
 
 from app import routes, models, errors
@@ -27,11 +29,11 @@ if not app.debug:
 		auth = None
 		if app.config['MAIL_USERNAME'] or app.config['MAIL_PASSWORD']:
 			auth = (app.config['MAIL_USERNAME'], app.config['MAIL_PASSWORD'])
-			
+		
 		secure = None
 		if app.config['MAIL_USE_TLS']:
 			secure = ()
-			
+		
 		mail_handler = SMTPHandler(
 			mailhost=(app.config['MAIL_SERVER'], app.config['MAIL_PORT']),
 			fromaddr=('no-reply@' + app.config['MAIL_SERVER']),
@@ -39,7 +41,7 @@ if not app.debug:
 			credentials=auth, secure=secure)
 		mail_handler.setLevel(logging.ERROR)
 		app.logger.addHandler(mail_handler)
-
+	
 	if not os.path.exists('logs'):
 		os.mkdir('logs')
 	
@@ -50,3 +52,14 @@ if not app.debug:
 	
 	app.logger.setLevel(logging.INFO)
 	app.logger.info('Microblog startup')
+
+
+def get_locale():
+	# user = getattr(g, 'user', None)
+	# if user is not None:
+	# 	return user.locale
+	# return request.accept_languages.best_match(app.config['LANGUAGES'])
+	return 'bg'
+
+
+babel = Babel(app, locale_selector=get_locale)

@@ -1,6 +1,8 @@
 {% extends "layout.html" %}
 
 {% block content %}
-  <h1>File Not Found</h1>
-  <p><a href=" {{ url_for('index') }}"/>Back to Home</p>
+ <div class="container">
+  <h1 class="mb-3 m-2">{{ _('File Not Found') }}</h1>
+  <p class="mb-3 m-2"><a href=" {{ url_for('index') }}"/>{{ _('Back to Home') }}</p>
+ </div>
 {% endblock content %}
