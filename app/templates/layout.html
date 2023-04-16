@@ -14,58 +14,42 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="{{ url_for('index') }}">Microblog</a>
+        <a class="navbar-brand" href="{{ url_for('main.index') }}">Microblog</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">{{ _('Home') }}</a>
+              <a class="nav-link active" aria-current="page" href="{{ url_for('main.index') }}">{{ _('Home') }}</a>
             </li>
             {% if current_user.is_anonymous %}
             <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('explore') }}">{{ _('Explore') }}</a>
+              <a class="nav-link" href="{{ url_for('main.explore') }}">{{ _('Explore') }}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('login') }}">{{ _('Login') }}Login</a>
+              <a class="nav-link" href="{{ url_for('auth.login') }}">{{ _('Login') }}</a>
             </li>
             {% else %}
             <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('explore') }}">{{ _('Explore') }}</a>
+              <a class="nav-link" href="{{ url_for('main.explore') }}">{{ _('Explore') }}</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="{{ url_for('user', username=current_user.username) }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="{{ url_for('main.user', username=current_user.username) }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 {{ _('Profile') }}
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="{{ url_for('edit_profile') }}">{{ _('Edit Profile') }}</a></li>
-                <li><a class="dropdown-item" href="{{ url_for('user', username=current_user.username) }}">{{ _('User Profile') }}</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('main.edit_profile') }}">{{ _('Edit Profile') }}</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('main.user', username=current_user.username) }}">{{ _('User Profile') }}</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="{{ url_for('logout') }}">{{ _('Logout') }}</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('auth.logout') }}">{{ _('Logout') }}</a></li>
               </ul>
             </li>
             {% endif %}
           </ul>
-<!--          <form class="d-flex">-->
-<!--            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
-<!--            <button class="btn btn-outline-success" type="submit">Search</button>-->
-<!--          </form>-->
         </div>
       </div>
     </nav>
-<!--    <div>Microblog:-->
-<!--      <a href="{{ url_for('index') }}">Home</a>-->
-<!--      {% if current_user.is_anonymous %}-->
-<!--      <a href="{{ url_for('register') }}">Register</a>-->
-<!--      <a href="{{ url_for('login') }}">Login</a>-->
-<!--      {% else %}-->
-<!--      <a href="{{ url_for('explore') }}">Explore</a>-->
-<!--      <a href="{{ url_for('user', username=current_user.username) }}">Profile</a>-->
-<!--      <a href="{{ url_for('logout') }}">Logout</a>-->
-<!--      {% endif %}-->
-<!--    </div>-->
-<!--    <hr>-->
 
     <div class="container">
       {% with messages = get_flashed_messages() %}

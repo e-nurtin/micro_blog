@@ -24,7 +24,7 @@
     </div>
     {{ form.submit(class_='btn btn-primary') }}
   </form>
-  <p class="m-2">{{ _('New user?') }} <a style="text-decoration: none" href="{{ url_for('register') }}">{{ _('Click to register!') }}</a></p>
-  <p class="m-2">{{ _('Forgot password?') }} <a style="text-decoration: none" href="{{ url_for('reset_password_request') }}">{{ _('Click to reset') }}.</a></p>
+  <p class="m-2">{{ _('New user?') }} <a style="text-decoration: none" href="{{ url_for('auth.register') }}">{{ _('Click to register!') }}</a></p>
+  <p class="m-2">{{ _('Forgot password?') }} <a style="text-decoration: none" href="{{ url_for('auth.reset_password_request') }}">{{ _('Click to reset') }}.</a></p>
 </div>
 {% endblock %}
