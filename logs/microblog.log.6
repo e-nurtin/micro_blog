@@ -1,5 +1,4 @@
-2023-04-12 15:04:27,430 INFO: Microblog startup [in C:\Users\ErsinN\PycharmProjects\micro_blog\app\__init__.py:52]
-2023-04-12 15:04:33,311 ERROR: Exception on /edit_profile [GET] [in C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py:1744]
+2023-04-12 15:01:48,119 ERROR: Exception on /edit_profile [GET] [in C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py:1744]
 Traceback (most recent call last):
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py", line 2528, in wsgi_app
     response = self.full_dispatch_request()
@@ -43,7 +42,7 @@ Traceback (most recent call last):
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
     raise TemplateNotFound(template)
 jinja2.exceptions.TemplateNotFound: bootstrap5/form.html
-2023-04-12 15:05:01,322 ERROR: Exception on /edit_profile [GET] [in C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py:1744]
+2023-04-12 15:02:09,155 ERROR: Exception on /edit_profile [GET] [in C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py:1744]
 Traceback (most recent call last):
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py", line 2528, in wsgi_app
     response = self.full_dispatch_request()
@@ -87,7 +86,8 @@ Traceback (most recent call last):
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
     raise TemplateNotFound(template)
 jinja2.exceptions.TemplateNotFound: bootstrap5/form.html
-2023-04-12 15:06:52,359 ERROR: Exception on /edit_profile [GET] [in C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py:1744]
+2023-04-12 15:02:18,227 INFO: Microblog startup [in C:\Users\ErsinN\PycharmProjects\micro_blog\app\__init__.py:52]
+2023-04-12 15:02:20,974 ERROR: Exception on /edit_profile [GET] [in C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py:1744]
 Traceback (most recent call last):
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\app.py", line 2528, in wsgi_app
     response = self.full_dispatch_request()
@@ -123,10 +123,13 @@ Traceback (most recent call last):
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\layout.html", line 33, in top-level template code
     {% endfor %}
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\app\templates\edit_profile.html", line 7, in block 'content'
-    <p>
+    {% from 'bootstrap5/form.html' import render_form %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 62, in get_source
     return self._get_source_fast(environment, template)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\ErsinN\PycharmProjects\micro_blog\venv\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
     raise TemplateNotFound(template)
 jinja2.exceptions.TemplateNotFound: bootstrap5/form.html
+2023-04-12 15:03:22,905 INFO: Microblog startup [in C:\Users\ErsinN\PycharmProjects\micro_blog\app\__init__.py:52]
+2023-04-12 15:03:39,750 INFO: Microblog startup [in C:\Users\ErsinN\PycharmProjects\micro_blog\app\__init__.py:52]
