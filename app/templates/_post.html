@@ -8,7 +8,17 @@
           {% endset %}
           {{ _('%(username)s said %(when)s', username=user_link, when=moment(post.timestamp).fromNow()) }}
           <br>
-          <p class="text-body">{{ post.body }}</p>
+          <p class="text-body"><span id="post{{ post.id }}">{{ post.body }}</span></p>
+          {% if post.language and post.language != g.locale %}
+            <br>
+                <p><span id="translation{{ post.id }}">
+                    <a href="javascript:translate(
+                                '#post{{ post.id }}',
+                                '#translation{{ post.id }}',
+                                '{{ post.language }}',
+                                '{{ g.locale }}');">{{ _('Translate') }}</a>
+                </span></p>
+          {% endif %}
 {#            <a style="text-decoration: none" href="{{ url_for('user', username=post.author.username) }}">{{ post.author.username }}</a> {{ _('said') }} {{ moment(post.timestamp).fromNow() }}:<br>{{ post.body }}#}
         <div class="w-100"></div>
         </td>

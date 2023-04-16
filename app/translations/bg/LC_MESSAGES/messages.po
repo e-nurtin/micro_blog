@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-04-16 10:01+0300\n"
+"POT-Creation-Date: 2023-04-16 18:38+0300\n"
 "PO-Revision-Date: 2023-04-15 11:03+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: bg\n"
@@ -17,6 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
+
+#: app/__init__.py:20
+msgid "Please log in to access this page"
+msgstr "Моля, влезте за достъп до тази страница"
 
 #: app/email.py:23
 msgid "[Microblog] Reset Password"
@@ -74,37 +78,45 @@ msgstr "Споделете мислите си"
 msgid "Reset Password"
 msgstr "Промени паролата си"
 
-#: app/routes.py:29
+#: app/routes.py:37
 msgid "Post is shared successfully!"
 msgstr "Публикацията е споделена успешно!"
 
-#: app/routes.py:50
+#: app/routes.py:59
 msgid "Invalid username or password"
 msgstr "Невалидни данни"
 
-#: app/routes.py:81
+#: app/routes.py:90
 msgid "Congratulations, you are now registered user!"
 msgstr "Поздравления, вече сте регистриран потребител!"
 
-#: app/routes.py:109
+#: app/routes.py:118
 msgid "Your changes have been saved!"
 msgstr "Вашите промени са запазени!"
 
-#: app/routes.py:131
+#: app/routes.py:140
 msgid "You cannot follow yourself!"
 msgstr "Не можете да следвате себе си!"
 
-#: app/routes.py:155
+#: app/routes.py:164
 msgid "You cannot unfollow yourself!"
 msgstr "Не можете да следвате себе си!"
 
-#: app/routes.py:190
+#: app/routes.py:199
 msgid "Check your email for instructions on how to reset your password"
 msgstr "Моля, проверете имейла си за инструкции как да промените паролата си"
 
-#: app/routes.py:207
+#: app/routes.py:216
 msgid "Your password has been changed!"
 msgstr "Вашата парола беше променена"
+
+#: app/translate.py:9
+msgid "Error: the translation service is not configured."
+msgstr "Грешка: услугата за превод не е конфигурирана."
+
+#: app/translate.py:25
+msgid "Error: the translation service ran into an error."
+msgstr "Възникна грешка при услугата за превод."
 
 #: app/templates/404.html:5
 msgid "File Not Found"
@@ -134,6 +146,10 @@ msgstr "Върни се към началото"
 #, python-format
 msgid "%(username)s said %(when)s"
 msgstr "%(username)s каза %(when)s"
+
+#: app/templates/_post.html:19
+msgid "Translate"
+msgstr "Превод"
 
 #: app/templates/edit_profile.html:5 app/templates/layout.html:42
 #: app/templates/user.html:16
@@ -168,6 +184,10 @@ msgstr "Профил"
 #: app/templates/layout.html:45
 msgid "Logout"
 msgstr "Изход"
+
+#: app/templates/layout.html:99
+msgid "Error: Could not contact server."
+msgstr "Грешка при свързване към сървъра."
 
 #: app/templates/login.html:5
 msgid "Sign In"

@@ -17,4 +17,5 @@ class Config:
 	ADMINS = ['ersin.nurtin@outlook.com']
 	POSTS_PER_PAGE = 25
 	LANGUAGES = ['en', 'bg']
+	MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
 	
