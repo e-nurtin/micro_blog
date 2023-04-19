@@ -1,24 +1,24 @@
-import os
-
-os.environ['DATABASE_URL'] = 'sqlite://'
-
 from datetime import datetime, timedelta
-from unittest import TestCase, main
-from app import app, db
+
+from app import db
 from app.models import User, Post
+from test_config import TestConfig
+from unittest import TestCase, main
+from app import create_app
 
 
-class UserModelCase(TestCase):
+class UserModelTestCase(TestCase):
 	def setUp(self):
-		self.app_context = app.app_context()
+		self.app = create_app(TestConfig)
+		self.app_context = self.app.app_context()
 		self.app_context.push()
 		db.create_all()
-	
+
 	def tearDown(self):
 		db.session.remove()
 		db.drop_all()
 		self.app_context.pop()
-	
+		
 	def test_password_hashing(self):
 		u = User(username='mathew')
 		u.set_password('pass')
@@ -87,7 +87,7 @@ class UserModelCase(TestCase):
 		self.assertEqual([p2, p3], u2.followed_posts().all())
 		self.assertEqual([p3, p4], u3.followed_posts().all())
 		self.assertEqual([p4], u4.followed_posts().all())
-
-
+	
+	
 if __name__ == '__main__':
 	main(verbosity=2)

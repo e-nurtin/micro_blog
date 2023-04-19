@@ -47,6 +47,14 @@
             </li>
             {% endif %}
           </ul>
+          {% if g.search_form %}
+              <form class="d-flex" role="search" action="{{ url_for('main.search') }}" method="get">
+                {{ g.search_form.q(size=20, class_="form-control me-2", type="search", placeholder=g.search_form.q.label.text) }}
+                {{ g.search_form.s(class_="btn btn-outline-success", type='submit', placeholder=g.search_form.s.text) }}
+{#                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">#}
+{#                <button class="btn btn-outline-success" type="submit">Search</button>#}
+              </form>
+          {% endif %}
         </div>
       </div>
     </nav>

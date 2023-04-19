@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-04-16 18:38+0300\n"
+"POT-Creation-Date: 2023-04-18 21:59+0300\n"
 "PO-Revision-Date: 2023-04-15 11:03+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: bg\n"
@@ -18,129 +18,110 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
-#: app/__init__.py:20
+#: app/__init__.py:19
 msgid "Please log in to access this page"
 msgstr "Моля, влезте за достъп до тази страница"
-
-#: app/email.py:23
-msgid "[Microblog] Reset Password"
-msgstr "[Microblog] Промяна на парола"
-
-#: app/forms.py:9 app/forms.py:16 app/forms.py:34
-msgid "Username"
-msgstr "Потребителско име"
-
-#: app/forms.py:10 app/forms.py:18 app/forms.py:66
-msgid "Password"
-msgstr "Парола"
-
-#: app/forms.py:11
-msgid "Remember Me"
-msgstr "Запомни ме"
-
-#: app/forms.py:17 app/forms.py:61
-msgid "Email"
-msgstr "Имейл"
-
-#: app/forms.py:19 app/forms.py:67
-msgid "Repeat Password"
-msgstr "Повтори паролата"
-
-#: app/forms.py:20 app/templates/register.html:5
-msgid "Register"
-msgstr "Регистрация"
-
-#: app/forms.py:25
-msgid "Username already in use! Please choose another."
-msgstr "Потребителското име е заето! Моля изберете друг."
-
-#: app/forms.py:30
-msgid "Email address already in use! Please choose another."
-msgstr "Имейла е вече използван! Моля изберете друг."
-
-#: app/forms.py:35
-msgid "About Me"
-msgstr "За мен"
-
-#: app/forms.py:36 app/forms.py:51 app/forms.py:57
-msgid "Submit"
-msgstr "Потвърди"
-
-#: app/forms.py:47
-msgid "The username already in use! Please choose a different username."
-msgstr "Потребителското име е заето! Моля изберете друг."
-
-#: app/forms.py:55
-msgid "Say what's on your mind"
-msgstr "Споделете мислите си"
-
-#: app/forms.py:62 app/forms.py:68 app/templates/reset_password_request.html:5
-msgid "Reset Password"
-msgstr "Промени паролата си"
-
-#: app/routes.py:37
-msgid "Post is shared successfully!"
-msgstr "Публикацията е споделена успешно!"
-
-#: app/routes.py:59
-msgid "Invalid username or password"
-msgstr "Невалидни данни"
-
-#: app/routes.py:90
-msgid "Congratulations, you are now registered user!"
-msgstr "Поздравления, вече сте регистриран потребител!"
-
-#: app/routes.py:118
-msgid "Your changes have been saved!"
-msgstr "Вашите промени са запазени!"
-
-#: app/routes.py:140
-msgid "You cannot follow yourself!"
-msgstr "Не можете да следвате себе си!"
-
-#: app/routes.py:164
-msgid "You cannot unfollow yourself!"
-msgstr "Не можете да следвате себе си!"
-
-#: app/routes.py:199
-msgid "Check your email for instructions on how to reset your password"
-msgstr "Моля, проверете имейла си за инструкции как да промените паролата си"
-
-#: app/routes.py:216
-msgid "Your password has been changed!"
-msgstr "Вашата парола беше променена"
 
 #: app/translate.py:9
 msgid "Error: the translation service is not configured."
 msgstr "Грешка: услугата за превод не е конфигурирана."
 
-#: app/translate.py:25
+#: app/translate.py:23
 msgid "Error: the translation service ran into an error."
 msgstr "Възникна грешка при услугата за превод."
 
-#: app/templates/404.html:5
-msgid "File Not Found"
-msgstr "Файлът не е намерен"
+#: app/auth/email.py:8
+msgid "[Microblog] Reset Password"
+msgstr "[Microblog] Промяна на парола"
 
-#: app/templates/404.html:6
-msgid "Back to Home"
-msgstr "Върни се към началото"
+#: app/auth/forms.py:9 app/auth/forms.py:16 app/main/forms.py:10
+msgid "Username"
+msgstr "Потребителско име"
 
-#: app/templates/500.html:5
-msgid "An unexpected error has occurred"
-msgstr "Появи се неочаквана грешка"
+#: app/auth/forms.py:10 app/auth/forms.py:18 app/auth/forms.py:39
+msgid "Password"
+msgstr "Парола"
 
-#: app/templates/500.html:6
-msgid ""
-"The error message was sent to the server. We apologize for any "
-"inconvenience!"
-msgstr ""
-"Съобщението за грешка беше изпратено до сървъра. Извиняваме се за "
-"неудобството!"
+#: app/auth/forms.py:11
+msgid "Remember Me"
+msgstr "Запомни ме"
 
-#: app/templates/500.html:7
-msgid "Back to Home Page"
-msgstr "Върни се към началото"
+#: app/auth/forms.py:17 app/auth/forms.py:34
+msgid "Email"
+msgstr "Имейл"
+
+#: app/auth/forms.py:19 app/auth/forms.py:40
+msgid "Repeat Password"
+msgstr "Повтори паролата"
+
+#: app/auth/forms.py:20 app/templates/auth/register.html:5
+msgid "Register"
+msgstr "Регистрация"
+
+#: app/auth/forms.py:25
+msgid "Username already in use! Please choose another."
+msgstr "Потребителското име е заето! Моля изберете друг."
+
+#: app/auth/forms.py:30
+msgid "Email address already in use! Please choose another."
+msgstr "Имейла е вече използван! Моля изберете друг."
+
+#: app/auth/forms.py:35 app/auth/forms.py:41
+#: app/templates/auth/reset_password_request.html:5
+msgid "Reset Password"
+msgstr "Промени паролата си"
+
+#: app/auth/routes.py:23
+msgid "Invalid username or password"
+msgstr "Невалидни данни"
+
+#: app/auth/routes.py:54
+msgid "Congratulations, you are now registered user!"
+msgstr "Поздравления, вече сте регистриран потребител!"
+
+#: app/auth/routes.py:72
+msgid "Check your email for instructions on how to reset your password"
+msgstr "Моля, проверете имейла си за инструкции как да промените паролата си"
+
+#: app/auth/routes.py:89
+msgid "Your password has been changed!"
+msgstr "Вашата парола беше променена"
+
+#: app/main/forms.py:11
+msgid "About Me"
+msgstr "За мен"
+
+#: app/main/forms.py:12 app/main/forms.py:27 app/main/forms.py:33
+msgid "Submit"
+msgstr "Потвърди"
+
+#: app/main/forms.py:23
+msgid "The username already in use! Please choose a different username."
+msgstr "Потребителското име е заето! Моля изберете друг."
+
+#: app/main/forms.py:31
+msgid "Say what's on your mind"
+msgstr "Споделете мислите си"
+
+#: app/main/forms.py:37 app/main/forms.py:38 app/main/routes.py:160
+msgid "Search"
+msgstr "Търси"
+
+#: app/main/routes.py:37
+msgid "Post is shared successfully!"
+msgstr "Публикацията е споделена успешно!"
+
+#: app/main/routes.py:71
+msgid "Your changes have been saved!"
+msgstr "Вашите промени са запазени!"
+
+#: app/main/routes.py:93
+msgid "You cannot follow yourself!"
+msgstr "Не можете да следвате себе си!"
+
+#: app/main/routes.py:117
+msgid "You cannot unfollow yourself!"
+msgstr "Не можете да следвате себе си!"
 
 #: app/templates/_post.html:9
 #, python-format
@@ -185,29 +166,13 @@ msgstr "Профил"
 msgid "Logout"
 msgstr "Изход"
 
-#: app/templates/layout.html:99
+#: app/templates/layout.html:91
 msgid "Error: Could not contact server."
 msgstr "Грешка при свързване към сървъра."
 
-#: app/templates/login.html:5
-msgid "Sign In"
-msgstr "Впиши се"
-
-#: app/templates/login.html:27
-msgid "New user?"
-msgstr "Нов потребител?"
-
-#: app/templates/login.html:27
-msgid "Click to register!"
-msgstr "Регистрирай се!"
-
-#: app/templates/login.html:28
-msgid "Forgot password?"
-msgstr "Забравена парола?"
-
-#: app/templates/login.html:28
-msgid "Click to reset"
-msgstr "Нулирай паролата си"
+#: app/templates/search.html:4
+msgid "Search results"
+msgstr "Резултати от търсенето"
 
 #: app/templates/user.html:11
 msgid "User"
@@ -224,4 +189,48 @@ msgstr "вашите последователи"
 #: app/templates/user.html:14
 msgid "following"
 msgstr "последявания"
+
+#: app/templates/auth/login.html:5
+msgid "Sign In"
+msgstr "Впиши се"
+
+#: app/templates/auth/login.html:27
+msgid "New user?"
+msgstr "Нов потребител?"
+
+#: app/templates/auth/login.html:27
+msgid "Click to register!"
+msgstr "Регистрирай се!"
+
+#: app/templates/auth/login.html:28
+msgid "Forgot password?"
+msgstr "Забравена парола?"
+
+#: app/templates/auth/login.html:28
+msgid "Click to reset"
+msgstr "Нулирай паролата си"
+
+#: app/templates/errors/404.html:5
+msgid "File Not Found"
+msgstr "Файлът не е намерен"
+
+#: app/templates/errors/404.html:6
+msgid "Back to Home"
+msgstr "Върни се към началото"
+
+#: app/templates/errors/500.html:5
+msgid "An unexpected error has occurred"
+msgstr "Появи се неочаквана грешка"
+
+#: app/templates/errors/500.html:6
+msgid ""
+"The error message was sent to the server. We apologize for any "
+"inconvenience!"
+msgstr ""
+"Съобщението за грешка беше изпратено до сървъра. Извиняваме се за "
+"неудобството!"
+
+#: app/templates/errors/500.html:7
+msgid "Back to Home Page"
+msgstr "Върни се към началото"
 

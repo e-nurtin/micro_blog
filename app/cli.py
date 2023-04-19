@@ -2,13 +2,12 @@ import os
 import click
 
 
-def register(app):
+def register_cli(app):
+	# This function adds new command to cmd on this venv - e.g. flask translate ...
 	@app.cli.group()
 	def translate():
 		"""Translations and localization commands configuration"""
 		pass
-	
-	# This function adds new command to cmd on this venv - e.g. flask translate ...
 	
 	@translate.command()
 	def update():

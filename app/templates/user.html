@@ -16,14 +16,14 @@
                 <p><a style="text-decoration: none" href="{{ url_for('main.edit_profile') }}">{{ _('Edit Profile') }}</a></p>
                 {% elif not current_user.is_following(user) %}
                 <p>
-                    <form action="{{ url_for('follow', username=user.username) }}" method="post">
+                    <form action="{{ url_for('main.follow', username=user.username) }}" method="post">
                         {{ form.hidden_tag() }}
                         {{ form.submit(class_='btn btn-secondary', value='Follow') }}
                     </form>
                 </p>
                 {% else %}
                 <p>
-                    <form action="{{ url_for('unfollow', username=user.username) }}" method="post">
+                    <form action="{{ url_for('main.unfollow', username=user.username) }}" method="post">
                         {{ form.hidden_tag() }}
                         {{ form.submit(class_='btn btn-secondary', value='Unfollow') }}
                     </form>
