@@ -3,8 +3,6 @@
 {% block content %}
   <div class="container">
     <h1 class="mb-3 m-3">{{ _('Hello, %(username)s!', username=current_user.username) }}</h1>
-
-{#    <h1 class="mb-3 m-3">{{ _('Hello') }}, {{ current_user.username }}!</h1>#}
     {% if form %}
     <form action="" method="post">
       {{ form.hidden_tag() }}
@@ -16,7 +14,6 @@
         {% endfor %}
       </div>
       {{ form.submit(class_="btn btn-primary m-3 mb-3") }}
-{#      <button type="submit" class="btn btn-primary m-3 mb-3">Submit</button>#}
       <hr>
     </form>
     {% endif %}
@@ -27,15 +24,15 @@
   <div class="container">
     <nav>
       <ul class="pagination">
-        <li class="page-item">
-          <a class="page-link{% if prev_url %} disabled{% endif %}" href="{{ prev_url or '#' }}" aria-label="Previous">
+        <li class="page-item previous{% if not prev_url %} disabled{% endif %}">
+          <a class="page-link" href="{{ prev_url or '#' }}" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
           </a>
         </li>
 <!--        <li class="page-item"><a class="page-link" href="#">1</a></li>-->
 <!--        <li class="page-item"><a class="page-link" href="#">2</a></li>-->
 <!--        <li class="page-item"><a class="page-link" href="#">3</a></li>-->
-        <li class="page-item">
+        <li class="page-item next{% if not next_url %} disabled{% endif %}">
           <a class="page-link" href="{{ next_url or '#' }}" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
           </a>
